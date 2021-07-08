@@ -1,6 +1,6 @@
 jenkins:
   quietPeriod: 0
-  systemMessage: 'Jenkins configured using CloudBees CI CasC - v1'
+  systemMessage: 'Jenkins configured using CloudBees CI CasC'
 unclassified:
   hibernationConfiguration:
     activities:
