@@ -42,9 +42,3 @@ credentials:
           id: "cloudbees-ci-workshop-github-app"
           owner: "REPLACE_GITHUB_ORG"
           privateKey: "${gitHubAppPrivateKey}"
-      - usernamePassword:
-          description: "CJOC Admin Token"
-          id: "admin-cli-token"
-          password: "${cbciOpsCenterAdminToken}"
-          scope: GLOBAL
-          username: "admin"
