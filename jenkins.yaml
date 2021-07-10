@@ -23,7 +23,7 @@ unclassified:
         modernSCM:
           scm:
             github:
-              credentialsId: "cloudbees-ci-workshop-github-app"
+              credentialsId: "cloudbees-ci-casc-workshop-github-app"
               repoOwner: "REPLACE_GITHUB_ORG"
               repository: "pipeline-library"
 credentials:
@@ -37,8 +37,8 @@ credentials:
           secret: "${gitHubWebhookSecret}"
       - gitHubApp:
           apiUri: "https://api.github.com"
-          appID: "${gitHubAppId}"
-          description: "CloudBees CI Workshop GitHub App credential"
-          id: "cloudbees-ci-workshop-github-app"
+          appID: "${cbciCascWorkshopGitHubAppId}"
+          description: "CloudBees CI CasC Workshop GitHub App credential"
+          id: "cloudbees-ci-casc-workshop-github-app"
           owner: "REPLACE_GITHUB_ORG"
-          privateKey: "${gitHubAppPrivateKey}"
+          privateKey: "${cbciCascWorkshopGitHubAppPrivateKey}"
