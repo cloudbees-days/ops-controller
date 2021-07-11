@@ -24,7 +24,7 @@ unclassified:
           scm:
             github:
               credentialsId: "cloudbees-ci-casc-workshop-github-app"
-              repoOwner: "REPLACE_GITHUB_ORG"
+              repoOwner: "${GITHUB_ORGANIZATION}"
               repository: "pipeline-library"
 credentials:
   system:
