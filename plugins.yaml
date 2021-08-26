@@ -5,7 +5,6 @@ plugins:
 - id: cloudbees-groovy-view
 - id: cloudbees-monitoring
 - id: cloudbees-pipeline-policies
-- id: cloudbees-prometheus
 - id: cloudbees-slack
 - id: cloudbees-template
 - id: cloudbees-view-creation-filter
