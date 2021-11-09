@@ -7,7 +7,7 @@ jenkins:
       - key: GITHUB_REPOSITORY
         value: ops-controller
   quietPeriod: 0
-  systemMessage: 'Jenkins configured using CloudBees CI CasC'
+  systemMessage: 'Jenkins configured using CloudBees CI CasC v1'
 unclassified:
   hibernationConfiguration:
     activities:
