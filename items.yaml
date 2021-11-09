@@ -15,22 +15,15 @@ items:
         daysToKeep: -1
         numToKeep: -1
     SCMSources:
+    navigators:
     - github:
         apiUri: https://api.github.com
         traits:
         - gitHubBranchDiscovery:
             strategyId: 1
         - headWildcardFilter:
+            excludes: ''
             includes: main
-        repoOwner: REPLACE_GITHUB_ORG
-        credentialsId: cloudbees-ci-casc-workshop-github-app
-        id: org.jenkinsci.plugins.github_branch_source.GitHubSCMNavigator::https://api.github.com::REPLACE_GITHUB_ORG::ops-controller
-        repository: ops-controller
-        configuredByUrl: false
-        repositoryUrl: https://github.com/REPLACE_GITHUB_ORG/ops-controller
-    navigators:
-    - github:
-        apiUri: https://api.github.com
         repoOwner: REPLACE_GITHUB_ORG
         credentialsId: cloudbees-ci-casc-workshop-github-app
     projectFactories:
