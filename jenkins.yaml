@@ -33,6 +33,8 @@ unclassified:
               credentialsId: "cloudbees-ci-casc-workshop-github-app"
               repoOwner: "${GITHUB_ORGANIZATION}"
               repository: "pipeline-library"
+  headerLabel:
+    text: "${GITHUB_APP}-bundle-v1"
 credentials:
   system:
     domainCredentials:
