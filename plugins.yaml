@@ -1,6 +1,9 @@
 plugins:
 - id: antisamy-markup-formatter
-- id: cloudbees-casc-api
+- id: cloudbees-casc-client
+- id: cloudbees-casc-items-api
+- id: cloudbees-casc-items-commons
+- id: cloudbees-casc-items-controller
 - id: cloudbees-github-reporting
 - id: cloudbees-groovy-view
 - id: cloudbees-monitoring
