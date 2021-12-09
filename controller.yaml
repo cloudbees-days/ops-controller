@@ -32,7 +32,7 @@ items:
         cpus: 1.0
         clusterEndpointId: default
         disk: 10
-        storageClassName: regional-pd-ssd-csi-storageclass
+        storageClassName: premium-rwo
         domain: REPLACE_GITHUB_ORG-REPLACE_CONTROLLER_NAME
         namespace: controllers
         yaml: |
