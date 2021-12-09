@@ -3,7 +3,7 @@ removeStrategy:
   items: NONE
 items:
 - kind: folder
-  name: REPLACE_GITHUB_ORG
+  name: REPLACE_FOLDER_NAME
   groups:
   - members:
       users:
