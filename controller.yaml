@@ -39,6 +39,9 @@ items:
           kind: "StatefulSet"
           spec:
             template:
+              metadata:
+                labels:
+                  networking/allow-internet-access: "true"
               spec:
                 containers:
                 - name: "jenkins"
