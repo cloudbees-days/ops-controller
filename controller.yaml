@@ -34,7 +34,7 @@ items:
         disk: 10
         storageClassName: premium-rwo
         domain: REPLACE_GITHUB_ORG-REPLACE_CONTROLLER_NAME
-        namespace: REPLACE_GITHUB_ORG
+        namespace: controllers
         yaml: |
           kind: "StatefulSet"
           spec:
