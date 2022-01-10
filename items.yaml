@@ -7,8 +7,8 @@ items:
   name: controller-jobs
   items:
   - kind: organizationFolder
-    displayName: cbci-casc-automation
-    name: cbci-casc-automation
+    displayName: controller-casc-update
+    name: controller-casc-update
     orphanedItemStrategy:
       defaultOrphanedItemStrategy:
         pruneDeadBranches: true
@@ -33,7 +33,7 @@ items:
             marker: Jenkinsfile
             definition:
               cpsScmFlowDefinition:
-                scriptPath: controller-casc-automation
+                scriptPath: controller-casc-update
                 scm:
                   gitSCM:
                     userRemoteConfigs:
