@@ -7,14 +7,12 @@ items:
   name: controller-jobs
   items:
   - kind: organizationFolder
-    displayName: controller-casc-update
     name: controller-casc-update
     orphanedItemStrategy:
       defaultOrphanedItemStrategy:
         pruneDeadBranches: true
         daysToKeep: -1
         numToKeep: -1
-    SCMSources:
     navigators:
     - github:
         apiUri: https://api.github.com
