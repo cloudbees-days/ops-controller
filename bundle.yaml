@@ -1,5 +1,5 @@
 apiVersion: "1"
-version: "1"
+version: "2"
 id: "REPLACE_GITHUB_ORG-REPLACE_CONTROLLER_NAME"
 description: "CloudBees CI configuration bundle for the REPLACE_GITHUB_ORG REPLACE_CONTROLLER_NAME Controller"
 availabilityPattern: "REPLACE_AVAILABILITY_PATTERN"
@@ -9,3 +9,5 @@ plugins:
   - "plugins.yaml"
 items:
   - "items.yaml"
+catalog:
+  - "plugin-catalog.yaml"
