@@ -15,11 +15,7 @@ items:
   items:
   - kind: organizationFolder
     name: controller-casc-update
-    orphanedItemStrategy:
-      defaultOrphanedItemStrategy:
-        pruneDeadBranches: true
-        daysToKeep: -1
-        numToKeep: -1
+    disabled: false
     navigators:
     - github:
         apiUri: https://api.github.com
@@ -29,13 +25,13 @@ items:
         - headWildcardFilter:
             excludes: ''
             includes: main
-        repoOwner: REPLACE_GITHUB_ORG
+        repoOwner: ${GITHUB_ORGANIZATION}
         credentialsId: cloudbees-ci-casc-workshop-github-app
     projectFactories:
     - customMultiBranchProjectFactory:
         factory:
           customBranchProjectFactory:
-            marker: bundle.yaml
+            marker: bundle/bundle.yaml
             definition:
               cpsScmFlowDefinition:
                 scriptPath: controller-casc-update
@@ -44,8 +40,12 @@ items:
                     userRemoteConfigs:
                     - userRemoteConfig:
                         credentialsId: cloudbees-ci-casc-workshop-github-app
-                        url: https://github.com/REPLACE_GITHUB_ORG/ops-controller.git
+                        url: https://github.com/${GITHUB_ORGANIZATION}/ops-controller.git
                     branches:
                     - branchSpec:
                         name: '*/main'
                 lightweight: true
+    properties:
+    - suppressFolderAutomaticTriggering:
+        strategy: INDEXING
+        branches: .*
