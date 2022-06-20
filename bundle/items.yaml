@@ -15,11 +15,7 @@ items:
   items:
   - kind: organizationFolder
     name: controller-casc-update
-    orphanedItemStrategy:
-      defaultOrphanedItemStrategy:
-        pruneDeadBranches: true
-        daysToKeep: -1
-        numToKeep: -1
+    disabled: false
     navigators:
     - github:
         apiUri: https://api.github.com
@@ -35,7 +31,7 @@ items:
     - customMultiBranchProjectFactory:
         factory:
           customBranchProjectFactory:
-            marker: Jenkinsfile
+            marker: bundle/bundle.yaml
             definition:
               cpsScmFlowDefinition:
                 scriptPath: controller-casc-update
@@ -49,3 +45,7 @@ items:
                     - branchSpec:
                         name: '*/main'
                 lightweight: true
+    properties:
+    - suppressFolderAutomaticTriggering:
+        strategy: INDEXING
+        branches: .*
