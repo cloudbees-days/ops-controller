@@ -31,7 +31,7 @@ items:
     - customMultiBranchProjectFactory:
         factory:
           customBranchProjectFactory:
-            marker: bundle/bundle.yaml
+            marker: Jenkinsfile
             definition:
               cpsScmFlowDefinition:
                 scriptPath: controller-casc-update
