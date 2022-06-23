@@ -3,6 +3,7 @@ version: "4"
 id: "REPLACE_GITHUB_ORG-REPLACE_CONTROLLER_NAME"
 description: "CloudBees CI configuration bundle for the REPLACE_GITHUB_ORG REPLACE_CONTROLLER_NAME Controller"
 availabilityPattern: "REPLACE_AVAILABILITY_PATTERN"
+jcascMergeStrategy: "override"
 jcasc:
   - "jcasc/"
 plugins:
