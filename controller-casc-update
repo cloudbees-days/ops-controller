@@ -11,7 +11,6 @@ pipeline {
       when {
         beforeAgent true
         branch 'main'
-        not { triggeredBy 'UserIdCause' }
       }
       environment { CASC_UPDATE_SECRET = credentials('casc-update-secret') }
       steps {
