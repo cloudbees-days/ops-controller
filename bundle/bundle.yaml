@@ -2,6 +2,7 @@ apiVersion: "1"
 version: "4"
 id: "REPLACE_GITHUB_ORG-REPLACE_CONTROLLER_NAME"
 description: "CloudBees CI configuration bundle for the REPLACE_GITHUB_ORG REPLACE_CONTROLLER_NAME Controller"
+parent: "base"
 availabilityPattern: "REPLACE_AVAILABILITY_PATTERN"
 jcasc:
   - "jcasc/"
