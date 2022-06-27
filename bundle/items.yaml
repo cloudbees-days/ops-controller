@@ -49,7 +49,6 @@ items:
     - suppressFolderAutomaticTriggering:
         strategy: INDEXING
         branches: .*
-  items:
   - kind: organizationFolder
     name: controller-casc-update
     disabled: false
