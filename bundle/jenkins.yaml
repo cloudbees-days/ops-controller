@@ -11,7 +11,7 @@ jenkins:
       - key: "BUNDLE_ID"
         value: "${CASC_BUNDLE_ID}"
   quietPeriod: 0
-  systemMessage: 'Jenkins configured using CloudBees CI CasC v1'
+  systemMessage: 'CloudBees CI configured using Configuration-as-Code - v1'
 notificationConfiguration:
   enabled: true
   router: "operationsCenter"
@@ -26,7 +26,6 @@ unclassified:
     apiRateLimitChecker: ThrottleForNormalize
   gitHubPluginConfig:
     hookSecretConfigs:
-    - credentialsId: "cloudbees-ci-workshop-github-webhook-secret"
   globalDefaultFlowDurabilityLevel:
     durabilityHint: PERFORMANCE_OPTIMIZED
   globallibraries:
@@ -37,11 +36,10 @@ unclassified:
         modernSCM:
           scm:
             github:
-              credentialsId: "cloudbees-ci-casc-workshop-github-app"
               repoOwner: "${GITHUB_ORGANIZATION}"
               repository: "pipeline-library"
   headerLabel:
-    text: "${GITHUB_APP}-bundle-v1"
+    text: "cloudbees-ci-casc-workshop-bundle-v1"
 credentials:
   system:
     domainCredentials:
@@ -51,15 +49,3 @@ credentials:
           id: "casc-update-secret"
           scope: GLOBAL
           secret: "${cbciCascWorkshopControllerProvisionSecret}"
-      - string:
-          description: "Webhook secret for CloudBees CI Workshop GitHub App"
-          id: "cloudbees-ci-workshop-github-webhook-secret"
-          scope: SYSTEM
-          secret: "${gitHubWebhookSecret}"
-      - gitHubApp:
-          apiUri: "https://api.github.com"
-          appID: "${cbciCascWorkshopGitHubAppId}"
-          description: "CloudBees CI CasC Workshop GitHub App credential"
-          id: "cloudbees-ci-casc-workshop-github-app"
-          owner: "${GITHUB_ORGANIZATION}"
-          privateKey: "${cbciCascWorkshopGitHubAppPrivateKey}"
