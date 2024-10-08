@@ -1,27 +1,33 @@
-removeStrategy:
-  rbac: SYNC
-  items: NONE
-items:
-- kind: customMultiBranchProject
-  name: controller-casc-update
-  disabled: false
-  projectFactories:
-  - customMultiBranchProjectFactory:
-      factory:
-        customBranchProjectFactory:
-          definition:
-            cpsScmFlowDefinition:
-              scriptPath: controller-casc-update
-              scm:
-                gitSCM:
-                  userRemoteConfigs:
-                  - userRemoteConfig:
-                      url: https://github.com/${GITHUB_ORGANIZATION}/ops-controller.git
-                  branches:
-                  - branchSpec:
-                      name: '*/main'
-              lightweight: true
-  properties:
-  - suppressFolderAutomaticTriggering:
-      strategy: INDEXING
-      branches: .*
+kind: multibranch
+name: casc-controller-update
+description: ''
+displayName: casc-controller-update
+orphanedItemStrategy:
+  defaultOrphanedItemStrategy:
+    pruneDeadBranches: true
+    daysToKeep: -1
+    numToKeep: -1
+    abortBuilds: false
+projectFactory:
+  workflowBranchProjectFactory:
+    scriptPath: controller-casc-update
+properties:
+- envVars: {
+    }
+sourcesList:
+- branchSource:
+    source:
+      github:
+        apiUri: https://api.github.com
+        traits:
+        - gitHubBranchDiscovery:
+            strategyId: 1
+        - headWildcardFilter:
+            excludes: ''
+            includes: main
+        repoOwner: ${GITHUB_ORGANIZATION}
+        repository: ${GITHUB_REPO}
+        repositoryUrl: https://github.com/${GITHUB_ORGANIZATION}/${GITHUB_USERNAME}-ops-controller.git
+    strategy:
+      allBranchesSame: {
+        }
