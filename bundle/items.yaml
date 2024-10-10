@@ -2,23 +2,27 @@ removeStrategy:
   rbac: sync
   items: none
 items:
-- kind: pipeline
-  name: controller-casc-update
-  concurrentBuild: true
-  definition:
-    cpsScmFlowDefinition:
-      scriptPath: controller-casc-update
-      scm:
-        scmGit:
-          userRemoteConfigs:
-          - userRemoteConfig:
-              credentialsId: 48031c8b-2f67-49cf-a495-e66bb9ab6c6b
-              url: https://github.com/${GITHUB_ORGANIZATION}/${GITHUB_USERNAME}-ops-controller.git
-          branches:
-          - branchSpec:
-              name: '*/main'
-      lightweight: true
+- kind: folder
+  name: controller-jobs
   description: ''
-  disabled: false
-  displayName: controller-casc-update
-  resumeBlocked: false
+  displayName: controller-jobs
+  - kind: pipeline
+    name: controller-casc-update
+    concurrentBuild: true
+    definition:
+      cpsScmFlowDefinition:
+        scriptPath: controller-casc-update
+        scm:
+          scmGit:
+            userRemoteConfigs:
+            - userRemoteConfig:
+                credentialsId: 48031c8b-2f67-49cf-a495-e66bb9ab6c6b
+                url: https://github.com/${GITHUB_ORGANIZATION}/${GITHUB_USERNAME}-ops-controller.git
+            branches:
+            - branchSpec:
+                name: '*/main'
+        lightweight: true
+    description: ''
+    disabled: false
+    displayName: controller-casc-update
+    resumeBlocked: false
