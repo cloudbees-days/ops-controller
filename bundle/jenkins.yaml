@@ -4,12 +4,8 @@ jenkins:
       env:
       - key: "GITHUB_ORGANIZATION"
         value: "${GITHUB_ORGANIZATION}"
-      - key: "GITHUB_REPOSITORY"
-        value: "ops-controller"
-      - key: "GITHUB_USER"
-        value: "${GITHUB_USER}"
-      - key: "BUNDLE_ID"
-        value: "${CASC_BUNDLE_ID}"
+      - key: "GITHUB_USERNAME"
+        value: "${GITHUB_USERNAME}"
   quietPeriod: 0
   systemMessage: 'CloudBees CI configured using Configuration-as-Code - v1'
 notificationConfiguration:
