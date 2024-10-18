@@ -6,6 +6,7 @@ items:
   name: controller-jobs
   description: ''
   displayName: controller-jobs
+items:
   - kind: pipeline
     name: controller-casc-update
     concurrentBuild: true
