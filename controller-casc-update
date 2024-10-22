@@ -1,30 +1,15 @@
-library 'pipeline-library'
 pipeline {
-  agent none
-  options {
-    timeout(time: 10, unit: 'MINUTES')
-    skipDefaultCheckout()
-  }
-  stages {
-    stage('Update Config Bundle') {
-      agent { label 'default' }
-      when {
-        beforeAgent true
-        branch 'main'
-      }
-      environment { CASC_UPDATE_SECRET = credentials('casc-update-secret') }
-      steps {
-        checkout scm
-        gitHubParseOriginUrl()
-        publishEvent event:jsonEvent("""
-          {
-            'controller':{'name':'${env.GITHUB_ORG}-${GITHUB_REPO}','action':'casc_bundle_update','bundle_id':'${env.BUNDLE_ID}'},
-            'github':{'organization':'${env.GITHUB_ORG}','repository':'${GITHUB_REPO}'},
-            'secret':'${CASC_UPDATE_SECRET}',
-            'casc':{'auto_reload':'true'}
-          }
-        """), verbose: true
-      }
+    agent any
+
+    stages {
+        stage('Update config bundle') {
+            steps {
+                publishEvent event:jsonEvent("""{
+                    "action": "bundle-update",
+                    "username": '${env.GITHUB_USERNAME}',
+                    "controller": "ops"
+                }"""), verbose: true
+            }
+        }
     }
-  }
 }
