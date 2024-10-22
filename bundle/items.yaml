@@ -13,39 +13,23 @@ items:
       - org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject
       filter: true
   items:
-  - kind: organizationFolder
-    name: controller-casc-update
-    disabled: false
-    navigators:
-    - github:
-        apiUri: https://api.github.com
-        traits:
-        - gitHubBranchDiscovery:
-            strategyId: 1
-        - headWildcardFilter:
-            excludes: ''
-            includes: main
-        repoOwner: ${GITHUB_ORGANIZATION}
-        credentialsId: cloudbees-ci-casc-workshop-github-app
-    projectFactories:
-    - customMultiBranchProjectFactory:
-        factory:
-          customBranchProjectFactory:
-            marker: Jenkinsfile
-            definition:
-              cpsScmFlowDefinition:
-                scriptPath: controller-casc-update
-                scm:
-                  gitSCM:
-                    userRemoteConfigs:
-                    - userRemoteConfig:
-                        credentialsId: cloudbees-ci-casc-workshop-github-app
-                        url: https://github.com/${GITHUB_ORGANIZATION}/ops-controller.git
-                    branches:
-                    - branchSpec:
-                        name: '*/main'
-                lightweight: true
-    properties:
-    - suppressFolderAutomaticTriggering:
-        strategy: INDEXING
-        branches: .*
+    - kind: pipeline
+      name: controller-casc-update
+      concurrentBuild: true
+      definition:
+        cpsScmFlowDefinition:
+          scriptPath: controller-casc-update
+          scm:
+            scmGit:
+              userRemoteConfigs:
+                - userRemoteConfig:
+                    credentialsId: 48031c8b-2f67-49cf-a495-e66bb9ab6c6b
+                    url: https://github.com/${GITHUB_ORGANIZATION}/${GITHUB_USERNAME}-ops-controller.git
+              branches:
+                - branchSpec:
+                    name: '*/main'
+          lightweight: true
+      description: ''
+      disabled: false
+      displayName: controller-casc-update
+      resumeBlocked: false
