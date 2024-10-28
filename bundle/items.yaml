@@ -18,7 +18,7 @@ items:
             userRemoteConfigs:
             - userRemoteConfig:
                 credentialsId: workshop-bot
-                url: https://github.com/${GITHUB_ORGANIZATION}/${GITHUB_USERNAME}-ops-controller.git
+                url: https://github.com/REPLACE_GITHUB_ORG/REPLACE_GITHUB_USERNAME-ops-controller.git
             branches:
             - branchSpec:
                 name: '*/main'
