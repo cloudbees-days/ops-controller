@@ -35,6 +35,7 @@ unclassified:
             github:
               repoOwner: "${GITHUB_ORGANIZATION}"
               repository: "pipeline-library"
+              credentialsId: "workshop-bot"
   headerLabel:
     text: "cloudbees-ci-casc-workshop-bundle-v1"
 credentials:
