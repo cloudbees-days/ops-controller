@@ -8,6 +8,7 @@ jenkins:
         value: "${GITHUB_USERNAME}"
   quietPeriod: 0
   systemMessage: 'CloudBees CI configured using Configuration-as-Code - v1'
+  numExecutors: 1
 notificationConfiguration:
   enabled: true
   router: "operationsCenter"
