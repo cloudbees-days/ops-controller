@@ -17,7 +17,7 @@ items:
           scmGit:
             userRemoteConfigs:
             - userRemoteConfig:
-                credentialsId: 48031c8b-2f67-49cf-a495-e66bb9ab6c6b
+                credentialsId: workshop-bot
                 url: https://github.com/${GITHUB_ORGANIZATION}/${GITHUB_USERNAME}-ops-controller.git
             branches:
             - branchSpec:
