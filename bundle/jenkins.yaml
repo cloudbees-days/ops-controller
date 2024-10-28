@@ -33,7 +33,8 @@ unclassified:
             scm:
               github:
                 repoOwner: "${GITHUB_ORGANIZATION}"
-                repository: "pipeline-library"
+                repository: "${GITHUB_USERNAME}-pipeline-library"
+                credentialsId: "workshop-bot"
   headerLabel:
     text: "cloudbees-ci-casc-workshop-bundle-v2"
 credentials:
