@@ -6,7 +6,7 @@ pipeline {
             steps {
                 publishEvent event:jsonEvent("""{
                     "action": "bundle-update",
-                    "username": '${env.GITHUB_USERNAME}'
+                    "username": '${env.GITHUB_USERNAME}',
                     "controller": "ops"
                 }"""), verbose: true
             }

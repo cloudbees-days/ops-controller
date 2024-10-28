@@ -1,11 +1,11 @@
 jenkins:
   globalNodeProperties:
-  - envVars:
-      env:
-      - key: "GITHUB_ORGANIZATION"
-        value: "${GITHUB_ORGANIZATION}"
-      - key: "GITHUB_USERNAME"
-        value: "${GITHUB_USERNAME}"
+    - envVars:
+        env:
+          - key: "GITHUB_ORGANIZATION"
+            value: "${GITHUB_ORGANIZATION}"
+          - key: "GITHUB_USERNAME"
+            value: "${GITHUB_USERNAME}"
   quietPeriod: 0
   systemMessage: 'CloudBees CI configured using Configuration-as-Code - v1'
   numExecutors: 1
@@ -15,8 +15,8 @@ notificationConfiguration:
 unclassified:
   hibernationConfiguration:
     activities:
-    - "build"
-    - "web"
+      - "build"
+      - "web"
     enabled: true
     gracePeriod: 1500
   gitHubConfiguration:
@@ -27,23 +27,23 @@ unclassified:
     durabilityHint: PERFORMANCE_OPTIMIZED
   globallibraries:
     libraries:
-    - defaultVersion: "main"
-      name: "pipeline-library"
-      retriever:
-        modernSCM:
-          scm:
-            github:
-              repoOwner: "${GITHUB_ORGANIZATION}"
-              repository: "${GITHUB_USERNAME}-pipeline-library"
-              credentialsId: "workshop-bot"
+      - defaultVersion: "main"
+        name: "pipeline-library"
+        retriever:
+          modernSCM:
+            scm:
+              github:
+                repoOwner: "${GITHUB_ORGANIZATION}"
+                repository: "${GITHUB_USERNAME}-pipeline-library"
+                credentialsId: "workshop-bot"
   headerLabel:
     text: "cloudbees-ci-casc-workshop-bundle-v1"
 credentials:
   system:
     domainCredentials:
-    - credentials:
-      - string:
-          description: "CasC Update Secret"
-          id: "casc-update-secret"
-          scope: GLOBAL
-          secret: "${cbciCascWorkshopControllerProvisionSecret}"
+      - credentials:
+          - string:
+              description: "CasC Update Secret"
+              id: "casc-update-secret"
+              scope: GLOBAL
+              secret: "${cbciCascWorkshopControllerProvisionSecret}"
