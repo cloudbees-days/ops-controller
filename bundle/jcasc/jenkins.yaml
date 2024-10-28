@@ -20,8 +20,8 @@ unclassified:
         modernSCM:
           scm:
             github:
-              credentialsId: "cloudbees-ci-casc-workshop-github-app"
               repoOwner: "${GITHUB_ORGANIZATION}"
-              repository: "pipeline-library"
+              repository: "${GITHUB_USERNAME}-pipeline-library"
+              credentialsId: "workshop-bot"
   headerLabel:
     text: "${GITHUB_APP}-bundle-v5"

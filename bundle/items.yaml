@@ -39,8 +39,8 @@ items:
                   gitSCM:
                     userRemoteConfigs:
                     - userRemoteConfig:
-                        credentialsId: cloudbees-ci-casc-workshop-github-app
-                        url: https://github.com/${GITHUB_ORGANIZATION}/ops-controller.git
+                        credentialsId: workshop-bot
+                        url: https://github.com/REPLACE_GITHUB_ORG/REPLACE_GITHUB_USERNAME-ops-controller.git
                     branches:
                     - branchSpec:
                         name: '*/main'
