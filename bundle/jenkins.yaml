@@ -32,9 +32,9 @@ unclassified:
           modernSCM:
             scm:
               github:
-              repoOwner: "${GITHUB_ORGANIZATION}"
-              repository: "${GITHUB_USERNAME}-pipeline-library"
-              credentialsId: "workshop-bot"
+                repoOwner: "${GITHUB_ORGANIZATION}"
+                repository: "${GITHUB_USERNAME}-pipeline-library"
+                credentialsId: "workshop-bot"
   headerLabel:
     text: "cloudbees-ci-casc-workshop-bundle-v2"
 credentials:
