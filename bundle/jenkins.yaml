@@ -6,10 +6,6 @@ jenkins:
         value: "${GITHUB_ORGANIZATION}"
       - key: "GITHUB_REPOSITORY"
         value: "ops-controller"
-      - key: "GITHUB_USER"
-        value: "${GITHUB_USER}"
-      - key: "BUNDLE_ID"
-        value: "${CASC_BUNDLE_ID}"
   quietPeriod: 0
   systemMessage: 'Jenkins configured using CloudBees CI CasC v2'
 notificationConfiguration:
@@ -37,9 +33,9 @@ unclassified:
         modernSCM:
           scm:
             github:
-              credentialsId: "cloudbees-ci-casc-workshop-github-app"
               repoOwner: "${GITHUB_ORGANIZATION}"
-              repository: "pipeline-library"
+              repository: "${GITHUB_USERNAME}-pipeline-library"
+              credentialsId: "workshop-bot"
   headerLabel:
     text: "${GITHUB_APP}-bundle-v2"
 credentials:
