@@ -8,9 +8,17 @@ jenkins:
             value: "${GITHUB_USERNAME}"
   quietPeriod: 0
   systemMessage: 'CloudBees CI configured using Configuration-as-Code - v4'
+  clouds:
+    - operationsCenterAgentProvisioningService
 notificationConfiguration:
   enabled: true
   router: "operationsCenter"
+kube:
+  podTemplatesConfiguration:
+    templates:
+      - id: "c1103cd4-721e-4a15-ac8e-c4edb5e9d829"
+        name: "default"
+        yamlMergeStrategy: "override"
 unclassified:
   hibernationConfiguration:
     activities:
