@@ -4,22 +4,28 @@ jenkins:
         env:
           - key: "GITHUB_ORGANIZATION"
             value: "${GITHUB_ORGANIZATION}"
-          - key: "GITHUB_REPOSITORY"
-            value: "ops-controller"
-          - key: "GITHUB_USER"
-            value: "${GITHUB_USER}"
-          - key: "BUNDLE_ID"
-            value: "${CASC_BUNDLE_ID}"
-  systemMessage: 'Jenkins configured using CloudBees CI CasC with controller overrides v2'
+          - key: "GITHUB_USERNAME"
+            value: "${GITHUB_USERNAME}"
+  quietPeriod: 0
+  systemMessage: 'CloudBees CI configured using Configuration-as-Code - v5'
   clouds:
     - operationsCenterAgentProvisioningService
-kube:
-  podTemplatesConfiguration:
-    templates:
-      - id: "c1103cd4-721e-4a15-ac8e-c4edb5e9d829"
-        name: "default"
-        yamlMergeStrategy: "override"
+notificationConfiguration:
+  enabled: true
+  router: "operationsCenter"
 unclassified:
+  hibernationConfiguration:
+    activities:
+      - "build"
+      - "web"
+    enabled: true
+    gracePeriod: 1500
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookSecretConfigs:
+  globalDefaultFlowDurabilityLevel:
+    durabilityHint: PERFORMANCE_OPTIMIZED
   globallibraries:
     libraries:
       - defaultVersion: "main"
@@ -32,4 +38,4 @@ unclassified:
                 repository: "${GITHUB_USERNAME}-pipeline-library"
                 credentialsId: "workshop-bot"
   headerLabel:
-    text: "${GITHUB_APP}-bundle-v5"
+    text: "cloudbees-ci-casc-workshop-bundle-v5"
