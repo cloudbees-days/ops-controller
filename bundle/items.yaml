@@ -55,7 +55,7 @@ items:
             lightweight: true
         description: ''
         disabled: false
-        displayName: controller-casc-update
+        displayName: Dev Controller CasC Update
         resumeBlocked: false
         properties:
           - pipelineTriggers:
@@ -79,5 +79,5 @@ items:
             lightweight: true
         description: ''
         disabled: false
-        displayName: controller-casc-update
+        displayName: Provision Dev Controller
         resumeBlocked: false
