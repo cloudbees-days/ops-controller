@@ -1,3 +1,4 @@
 plugins:
-# non-cap plugins
-- id: dark-theme
+  # non-cap plugins
+  - id: dark-theme
+
