@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Update config bundle') {
+            steps {
+                publishEvent event:jsonEvent("""{
+                    "action": "bundle-update",
+                    "username": '${env.GITHUB_USERNAME}',
+                    "controller": "dev"
+                }"""), verbose: true
+            }
+        }
+    }
+}
