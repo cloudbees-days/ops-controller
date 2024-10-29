@@ -1,4 +1,4 @@
-apiVersion: "1"
+apiVersion: "2"
 version: "5"
 id: "REPLACE_GITHUB_ORG-REPLACE_CONTROLLER_NAME"
 description: "CloudBees CI configuration bundle for the REPLACE_GITHUB_ORG REPLACE_CONTROLLER_NAME Controller"
