@@ -14,7 +14,7 @@ items:
           filter: true
     items:
       - kind: pipeline
-        name: ops-controller-casc-update
+        name: controller-casc-update
         concurrentBuild: true
         definition:
           cpsScmFlowDefinition:
