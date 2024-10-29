@@ -33,3 +33,7 @@ items:
         disabled: false
         displayName: controller-casc-update
         resumeBlocked: false
+        properties:
+          - pipelineTriggers:
+              triggers:
+                - githubPush: { }
