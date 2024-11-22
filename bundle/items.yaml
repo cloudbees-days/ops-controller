@@ -42,13 +42,13 @@ items:
         concurrentBuild: true
         definition:
           cpsScmFlowDefinition:
-            scriptPath: dev-controller-casc-update
+            scriptPath: controller-casc-update
             scm:
               scmGit:
                 userRemoteConfigs:
                   - userRemoteConfig:
                       credentialsId: workshop-bot
-                      url: https://github.com/REPLACE_GITHUB_ORG/REPLACE_GITHUB_USERNAME-ops-controller.git
+                      url: https://github.com/REPLACE_GITHUB_ORG/REPLACE_GITHUB_USERNAME-dev-controller.git
                 branches:
                   - branchSpec:
                       name: '*/main'
